@@ -1,16 +1,19 @@
 package Assingment;
-
+/*
+ * This file we using extends method
+ * Sample Interrupting method
+ */
 // public interface ThreadDemo {
-//     public static void main(String[] args) {
-//         MyThread obj1 = new MyThread();
-//         obj1.start();
-//         obj1 = new MyThread();
-//         obj1.start();
+//     public static void main(String[] args) { 
+//         MyThread obj1 = new MyThread(); //Creating object of MyThread class
+//         MyThread obj2 = new MyThread(); //Creating object of MyThread class
+//         obj1.start(); // Starting Thread mains start Tread one
+//         obj2.start(); // Starting Thread mains start Tread one
 //     }
 // }
 // class MyThread extends Thread{
-//     @Override
-//     public void run(){
+//     @Override //The keyword use for rewrite method 
+//     public void run(){ //The tread is start using run method.
 //         for(int i = 0; i<10;i++){
 //             System.out.println("Hello, I am a thread! ");
 //         }
