@@ -5,4 +5,15 @@ Example:
         The processor gives each thread a specific time to execute task may be complete or may be not complete.Each threads is independent.
         When we typing in vs code editor it provide us backhand to save our typing text.
 ThreadDemo
-        
+        MyThread class extends the Thread class and overrides the run() method to print "Hello, I am a thread!" ten times.
+        In the main() method of ThreadDemo class, two instances of MyThread are created, and then both threads are started using the start() method.
+After Modified
+        MyThread class has a static counter variable which is shared among all instances of the class.
+        The incrementCounter() method is synchronized to ensure safe access to the shared counter variable.
+        In the run() method of MyThread, each thread increments the shared counter ten times.
+        In the main() method of ThreadDemo, after starting both threads, the program waits for them to complete using the join() method. Then it prints the final value of the shared counter.
+MyRunnable
+        MyRunnable class implements the Runnable interface and overrides the run() method to print "Hello, I am a runnable!" ten times.
+        In the main() method of RunnableDemo class, two instances of MyRunnable are created.
+        Two Thread instances are created, passing each instance of MyRunnable as a parameter to the Thread constructor.
+        Both threads are started using the start() method.
