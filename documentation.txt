@@ -1,0 +1,8 @@
+Thread
+        Thread is a task which provide processor to execute it and multiThread is collection of Threads. which makes our program to execute faster then simple program.The java contains
+        multiThread class.We can implement Thread concept in two types first is by extending class and second one is implement runnable class.
+Example: 
+        The processor gives each thread a specific time to execute task may be complete or may be not complete.Each threads is independent.
+        When we typing in vs code editor it provide us backhand to save our typing text.
+ThreadDemo
+        

@@ -20,36 +20,43 @@ package Assingment;
 //     }
 // }
 
+class MyThread extends Thread {
+    // Shared counter variable
+    private static int counter = 0;
+
+    // Method to increment the shared counter safely
+    private static synchronized void incrementCounter() {
+        counter++;
+    }
+
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            // Increment the shared counter
+            incrementCounter();
+        }
+    }
+
+    // Method to get the final value of the counter
+    public static int getCounter() {
+        return counter;
+    }
+}
+
 public class ThreadDemo {
-    public static void main(String[] args) {
-        MyRunnable obj1 = new MyRunnable();
-        MyRunnable obj2 = new MyRunnable();
-        Thread thread1 = new Thread(obj1);
-        Thread thread2 = new Thread(obj2);
+    public static void main(String[] args) throws InterruptedException {
+        // Create two instances of MyThread
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+
+        // Start both threads
         thread1.start();
         thread2.start();
 
-        //Handling Interrupted Exception
-        try {
-            thread1.join(); //waiting for thread1 to complete.
-            thread2.join();//waiting for thread2 to complete.
-        } catch (InterruptedException var) {
-            System.out.println("Threads Interrupts for waiting... ");
-        }
-        System.out.println(MyRunnable.getCounter());
-    }
-}
-class MyRunnable implements Runnable{
-    private static int sharedCounter = 0;
-    private static final Object lock = new Object();
-    public void run(){
-        for(int i = 0; i<10;i++){
-            synchronized (lock){
-                sharedCounter++;
-            }
-        }
-    }
-    public static int getCounter(){
-        return sharedCounter;
+        // Wait for both threads to complete
+        thread1.join();
+        thread2.join();
+
+        // Print the final value of the counter
+        System.out.println("Final value of the counter: " + MyThread.getCounter());
     }
 }

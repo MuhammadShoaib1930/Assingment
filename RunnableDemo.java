@@ -9,7 +9,7 @@ public class RunnableDemo {
         Thread thread1 = new Thread(obj1); // initializing One thread Object 
         Thread thread2 = new Thread(obj2); // initializing second thread Object
         thread1.start(); // Start method responsible to interrupting
-        thread2.start();// Start method responsible to interrupting
+        thread2.start();// Start method responsible to interrupt
     }
 }
 class MyRunnable implements Runnable{ //create dived class 
